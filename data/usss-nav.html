@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title></title>
+    <link href="./css/usss.css?v=ReplaceCssVersion" rel="stylesheet" type="text/css"/>
+    <script src="./js/jquery.min.js" type="text/javascript"></script>
+    <script src="./js/usss.js" type="text/javascript"></script>
+</head>
+
+<body>
+<!--<div style="width: 350px;">-->
+<div id="main-menu" style="">
+    <nav>
+        <ul class="nav-bar">
+            <li><a href="#" class="pocket-link">Pocket</a></li>
+            <li><a class="email-link" href="#" onclick="emailAction()"><span>Email</span>
+                <span class="email-options" onclick="emailOption(event)"></span></a>
+            </li>
+            <li><a class="otherDevice-link sub-menu-arrow" href="#">Other Device</a></li>
+            <li><a class="screenshot-link" href="#">Screenshot</a></li>
+            <li><a class="pdf-link" href="#">PDF</a></li>
+            <li><a class="hello-link" href="#">Hello</a></li>
+        </ul>
+
+
+    </nav>
+    <div class="suggestion-service">Suggested Services</div>
+    <div style="text-align: center;padding:6px 0">Potential Partner</div>
+    <a class="action" href="#" onclick="switchOps('#main-menu','#customize-send-parent', 375, 260);">Customize</a>
+</div>
+
+<div id="email-options-content" style="width: 373px;display: none;">
+    <a href="#" class="nav-back" onclick="switchOps('#email-options-content','#main-menu')"></a>
+
+    <div class="option-content">
+        <nav style="height: 38px;">
+            <ul class="nav-tab-horizontal">
+                <li class="active"><a class="email-to-link" id="email-to-link" href="#email-yourself">Email to
+                    Yourself</a></li>
+                <li><a class="" href="#email-format">Format</a></li>
+            </ul>
+        </nav>
+        <div id="email-tab-content">
+            <div class="tab-pane active" id="email-yourself">
+                <input type="text" placeholder="email@email.com"/><input type="button" value="Edit"/>
+            </div>
+            <div class="tab-pane" id="email-format" style="margin: 12px 25px;">
+                <div class="radio-parent">
+                    <input type="radio" id="radio1" name="radio"/>
+                    <label for="radio1"><span></span>Link</label>
+                </div>
+
+                <div class="radio-parent">
+                    <input type="radio" id="radio2" name="radio"/>
+                    <label for="radio2"><span></span>Html Inline</label>
+                </div>
+                <div class="radio-parent">
+                    <input type="radio" id="radio3" name="radio"/>
+                    <label for="radio3"><span></span>JPEG</label>
+                </div>
+            </div>
+        </div>
+        <a class="action" href="#" style="line-height: 35px">Send</a>
+    </div>
+</div>
+
+<div id="customize-send-parent" style="width: 373px;display: none">
+    <a href="#" class="nav-back" onclick="switchOps('#customize-send-parent,#customize-quick-buttons','#main-menu')"></a>
+
+    <div class="option-content ">
+        <div class="content-frame">
+            <div class="option-content-heading">Customize your send to menu</div>
+            <div style="font-weight: bold; line-height: 40px"> Quick Buttons</div>
+            <div>I want my quick button to be</div>
+            <div class="radio-parent">
+                <input type="radio" id="quick-option1" name="quick"/>
+                <label for="quick-option1"><span></span>My most frequent action</label>
+            </div>
+
+            <div class="radio-parent">
+                <input type="radio" id="quick-option2" name="quick"/>
+                <label for="quick-option2"><span></span>Custom</label>
+            </div>
+        </div>
+        <a class="action" href="#">Add a Quick Button</a>
+        <a class="action" href="#" onclick="switchOps('','#customize-quick-buttons', 375, 502)">Add/Remove Services</a>
+
+        <div id="customize-quick-buttons" style="display: none">
+            <nav>
+                <ul class="nav-bar">
+                    <li><a href="#" class="pocket-link">Pocket</a></li>
+                    <li><a class="email-link" href="#" onclick="emailAction()"><span>Email</span></a></li>
+                    <li><a class="otherDevice-link" href="#">Other Device</a></li>
+                    <li><a class="screenshot-link" href="#">Screenshot</a></li>
+                    <li><a class="pdf-link" href="#">PDF</a></li>
+                    <li><a class="hello-link" href="#">Hello</a></li>
+                </ul>
+            </nav>
+            <div class="clearfix" style="position: relative">
+                <div style="float: left;width: 50%">
+                    <a class="action separator-right" href="#"
+                       onclick="cancelChangeServices()">Cancel</a>
+                </div>
+                <div style="display: block; border-left: 1px solid #c1c1c1;position: absolute;height: 100%;left: 50%;">
+                    &nbsp;</div>
+                <div style="float:left;width: 50%;"><a class="action" href="#">Save</a></div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<!--</div>-->
+
+</body>
+</html>
+
+

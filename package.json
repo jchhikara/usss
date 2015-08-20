@@ -1,0 +1,13 @@
+{
+  "title": "USSS",
+  "name": "usss",
+  "version": "0.0.0",
+  "description": "Universal Save/Send/Share",
+  "main": "index.js",
+  "author": "Jatin Chhikara",
+  "engines": {
+    "firefox": ">=38.0a1",
+    "fennec": ">=38.0a1"
+  },
+  "license": "MIT"
+}
