@@ -2,7 +2,14 @@
 var self = require('sdk/self');
 var data = self.data;
 var panels = require('sdk/panel');
+var windows = require('sdk/window/utils');
+var browserWindow = '';
+var browserDocument = '';
 var { ToggleButton } = require('sdk/ui/button/toggle');
+
+//var screensh = require('./screensh');
+
+
 
 var button = ToggleButton({
     id: 'shareIt',
@@ -11,7 +18,7 @@ var button = ToggleButton({
         '16': './USSS.png' //'./FX__USSS-16x16.svg'
     },
     onChange: shareItAction
-})
+});
 
 function shareItAction(state) {
     if (state.checked) {
@@ -19,6 +26,9 @@ function shareItAction(state) {
             position: button
         })
     }
+    //var { Cu } = require('chrome');
+    //Cu.import('resource://gre/modules/devtools/gcli/commands/screenshot.js');
+    console.log(screensh);
 }
 
 function panelHide() {
@@ -35,8 +45,12 @@ var panel = panels.Panel({
     //,contentScript: `self.port.emit('resize', {width: document.documentElement.clientWidth, height: document.documentElement.clientHeight});`
 });
 
-panel.port.on('resizeP', (width,height) => {
+panel.port.on('resizeP', (width, height) => {
     panel.resize(width, height);
+});
+
+panel.port.on('email', ()=> {
+    browserWindow.MailIntegration.sendLinkForBrowser(browserWindow.gBrowser.selectedBrowser);
 });
 
 //For resizing the panel according to the content  //http://stackoverflow.com/questions/14123936/how-to-change-panel-size-in-mozilla-like-chrome-extension
@@ -46,6 +60,7 @@ panel.port.on('resizeP', (width,height) => {
 //});
 
 exports.main = () => {
-
+    browserWindow = windows.getMostRecentBrowserWindow();
+    browserDocument = browserWindow.document;
 
 };
