@@ -53,7 +53,7 @@ panel.port.on('email', ()=> {
     browserWindow.MailIntegration.sendLinkForBrowser(browserWindow.gBrowser.selectedBrowser);
 });
 
-//For resizing the panel according to the content  //http://stackoverflow.com/questions/14123936/how-to-change-panel-size-in-mozilla-like-chrome-extension
+//For resizing the panel according to the content
 //panel.port.on("resize", function({width, height})
 //{
 //    panel.resize(width, height);
